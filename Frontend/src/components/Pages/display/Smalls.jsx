@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from "react";
-import A from "../../../assets/images/capitals/A.png";
-import B from "../../../assets/images/capitals/B.png";
-import C from "../../../assets/images/capitals/C.png";
-import D from "../../../assets/images/capitals/D.png";
-import E from "../../../assets/images/capitals/E.png";
-import F from "../../../assets/images/capitals/F.png";
-import G from "../../../assets/images/capitals/G.png";
-import H from "../../../assets/images/capitals/H.png";
-import I from "../../../assets/images/capitals/I.png";
-import J from "../../../assets/images/capitals/J.png";
-import K from "../../../assets/images/capitals/K.png";
-import L from "../../../assets/images/capitals/L.png";
-import M from "../../../assets/images/capitals/M.png";
-import N from "../../../assets/images/capitals/N.png";
-import O from "../../../assets/images/capitals/O.png";
-import P from "../../../assets/images/capitals/P.png";
-import Q from "../../../assets/images/capitals/Q.png";
-import R from "../../../assets/images/capitals/R.png";
-import S from "../../../assets/images/capitals/S.png";
-import T from "../../../assets/images/capitals/T.png";
-import U from "../../../assets/images/capitals/U.png";
-import V from "../../../assets/images/capitals/V.png";
-import W from "../../../assets/images/capitals/W.png";
-import X from "../../../assets/images/capitals/X.png";
-import Y from "../../../assets/images/capitals/Y.png";
-import Z from "../../../assets/images/capitals/Z.png";
+import a from "../../../assets/images/small/a.png";
+import b from "../../../assets/images/small/b.png";
+import c from "../../../assets/images/small/c.png";
+import d from "../../../assets/images/small/d.png";
+import e from "../../../assets/images/small/e.png";
+import f from "../../../assets/images/small/f.png";
+import g from "../../../assets/images/small/g.png";
+import h from "../../../assets/images/small/h.png";
+import i from "../../../assets/images/small/i.png";
+import j from "../../../assets/images/small/j.png";
+import k from "../../../assets/images/small/k.png";
+import l from "../../../assets/images/small/l.png";
+import m from "../../../assets/images/small/m.png";
+import n from "../../../assets/images/small/n.png";
+import o from "../../../assets/images/small/o.png";
+import p from "../../../assets/images/small/p.png";
+import q from "../../../assets/images/small/q.png";
+import r from "../../../assets/images/small/r.png";
+import s from "../../../assets/images/small/s.png";
+import t from "../../../assets/images/small/t.png";
+import u from "../../../assets/images/small/u.png";
+import v from "../../../assets/images/small/v.png";
+import w from "../../../assets/images/small/w.png";
+import x from "../../../assets/images/small/x.png";
+import y from "../../../assets/images/small/y.png";
+import z from "../../../assets/images/small/z.png";
 
 import axios from "axios";
 import Layout2 from "../../Layout/Layout2";
-import RotateImage from "./RotateImage";
+// import RotateImage from "./RotateImage";
 import AAudio from "../../../assets/sounds/a.mp3";
 import BAudio from "../../../assets/sounds/b.mp3";
 import CAudio from "../../../assets/sounds/c.mp3";
@@ -67,7 +67,7 @@ import correctAnsAudio from "../../../assets/sounds/Correct Answer.mp3";
 import wrongAnsAudio from "../../../assets/sounds/Wrong answer.mp3";
 import pleaseWaitAudio from "../../../assets/sounds/Please wait your voice.mp3";
 
-const Capitals = () => {
+const Smalls = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [transcribedText, setTranscribedText] = useState(null);
@@ -76,32 +76,32 @@ const Capitals = () => {
   const [popupAnimation, setPopupAnimation] = useState(null);
 
   const images = [
-    { id: 1, src: A, audio: AAudio },
-    { id: 2, src: B, audio: BAudio },
-    { id: 3, src: C, audio: CAudio },
-    { id: 4, src: D, audio: DAudio },
-    { id: 5, src: E, audio: EAudio },
-    { id: 6, src: F, audio: FAudio },
-    { id: 7, src: G, audio: GAudio },
-    { id: 8, src: H, audio: HAudio },
-    { id: 9, src: I, audio: IAudio },
-    { id: 10, src: J, audio: JAudio },
-    { id: 11, src: K, audio: KAudio },
-    { id: 12, src: L, audio: LAudio },
-    { id: 13, src: M, audio: MAudio },
-    { id: 14, src: N, audio: NAudio },
-    { id: 15, src: O, audio: OAudio },
-    { id: 16, src: P, audio: PAudio },
-    { id: 17, src: Q, audio: QAudio },
-    { id: 18, src: R, audio: RAudio },
-    { id: 19, src: S, audio: SAudio },
-    { id: 20, src: T, audio: TAudio },
-    { id: 21, src: U, audio: UAudio },
-    { id: 22, src: V, audio: VAudio },
-    { id: 23, src: W, audio: WAudio },
-    { id: 24, src: X, audio: XAudio },
-    { id: 25, src: Y, audio: YAudio },
-    { id: 26, src: Z, audio: ZAudio },
+    { id: 1, src: a, audio: AAudio },
+    { id: 2, src: b, audio: BAudio },
+    { id: 3, src: c, audio: CAudio },
+    { id: 4, src: d, audio: DAudio },
+    { id: 5, src: e, audio: EAudio },
+    { id: 6, src: f, audio: FAudio },
+    { id: 7, src: g, audio: GAudio },
+    { id: 8, src: h, audio: HAudio },
+    { id: 9, src: i, audio: IAudio },
+    { id: 10, src: j, audio: JAudio },
+    { id: 11, src: k, audio: KAudio },
+    { id: 12, src: l, audio: LAudio },
+    { id: 13, src: m, audio: MAudio },
+    { id: 14, src: n, audio: NAudio },
+    { id: 15, src: o, audio: OAudio },
+    { id: 16, src: p, audio: PAudio },
+    { id: 17, src: q, audio: QAudio },
+    { id: 18, src: r, audio: RAudio },
+    { id: 19, src: s, audio: SAudio },
+    { id: 20, src: t, audio: TAudio },
+    { id: 21, src: u, audio: UAudio },
+    { id: 22, src: v, audio: VAudio },
+    { id: 23, src: w, audio: WAudio },
+    { id: 24, src: x, audio: XAudio },
+    { id: 25, src: y, audio: YAudio },
+    { id: 26, src: z, audio: ZAudio },
   ];
 
   useEffect(() => {
@@ -318,7 +318,7 @@ const Capitals = () => {
     <Layout2>
       <div className="flex h-screen overflow-hidden">
         <div className="w-1/4 bg-gray-200 p-4 overflow-y-auto">
-          <h2 className="text-lg font-bold mb-4">Capital Letters</h2>
+          <h2 className="text-lg font-bold mb-4">Small Letters</h2>
           <div className="flex flex-wrap">
             {images.map((image) => (
               <img
@@ -334,11 +334,11 @@ const Capitals = () => {
         <div className="w-3/4 bg-gray-300 p-4 flex flex-col items-center justify-center">
           {selectedImage && (
             <>
-              <div className="mb-4 ml-80">
+              <div className="m-4 ml-80">
                 <img
                   src={selectedImage}
                   alt="Selected Image"
-                  className=" w-1/2 h-auto object-contain"
+                  className=" w-3/4 h-auto object-contain m-2"
                 />
               </div>
               <div className="mb-4">
@@ -377,4 +377,4 @@ const Capitals = () => {
   );
 };
 
-export default Capitals;
+export default Smalls;

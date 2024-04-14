@@ -1,4 +1,2 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 07979e2c2c0b23eddc7eb8ea48799b80433d49e3
+# KidsLearning
+- WCE Mini Project II

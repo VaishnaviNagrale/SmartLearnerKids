@@ -38,13 +38,13 @@ function CategoryPage() {
       title: 'A-Z',
       loc: './src/assets/images/capital_letters.jpg',
       description: 'Capital Letters',
-      route: 'A-Z',
+      route: 'capitals',
     },
     {
       title: 'a-z',
       loc: './src/assets/images/small_letters.jpg',
       description: 'Small Letters',
-      route: 'a-z',
+      route: 'smalls',
     },
     {
       title: '0-9',
