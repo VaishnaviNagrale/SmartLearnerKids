@@ -130,7 +130,7 @@ const Smalls = () => {
       setShowPopup(true);
       setPopupAnimation(recordingAnimationData);
 
-      await axios.post("http://localhost:8000/api/v1/users/record-audio");
+      await axios.post("/record-audio");
 
       setTimeout(() => {
         setShowPopup(false);
@@ -145,7 +145,7 @@ const Smalls = () => {
       }, 60000);
 
       const response = await axios.post(
-        "http://localhost:8000/api/v1/users/transcribe-audio"
+        "/transcribe-audio"
       );
 
       setTranscribedText(response.data.transcribedText);

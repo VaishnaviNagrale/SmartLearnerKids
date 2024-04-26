@@ -12,7 +12,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:8000/api/v1/users/login", values);
+      await axios.post("/login", values);
       message.success("Login Successful");
       setLoading(false);
       navigate("/home")
