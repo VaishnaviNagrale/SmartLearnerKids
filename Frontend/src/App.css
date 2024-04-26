@@ -1,0 +1,25 @@
+:root {
+    --pri-color: #85e7f8; /* Primary color */
+    --sec-color: #2b4dbe; /* Secondary color */
+    --tri-color: #fa9490; /* Tertiary color */
+    --for-color: #ffffff; /* Default background color for light theme */
+    --fiv-color: #000000; /* Default text color for light theme */
+    --txt-color: #3e3e3e; /* Default text color for light theme */
+  }
+  
+  body {
+    background: linear-gradient(to bottom right, #ffffff, #fa9490, #37cbe6);
+    background-attachment: fixed;
+    background-size: 300% 300%;
+    color: var(--txt-color);
+    animation: gradientAnimation 30s infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }  

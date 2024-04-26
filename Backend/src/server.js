@@ -15,7 +15,12 @@ const app = express();
 // Middlewares
 app.use(morgan('dev'));
 app.use(json());
-app.use(cors());
+
+app.use(cors(
+  {
+    origin: '*',
+  }
+));
 
 // Routes
 // User routes

@@ -272,7 +272,8 @@ const Smalls = () => {
           const isCorrectAnswer =
           cleanedTranscribedText ===
           cleanedAlphabetCharacter.trim().toUpperCase().replace(/\.$/, "");
-  
+          console.error("cleanedTranscribedText:", cleanedTranscribedText);
+          console.error("cleanedAlphabetCharacter:", cleanedAlphabetCharacter.trim().toUpperCase().replace(/\.$/, ""));
         setShowPopup(true);
         if (isCorrectAnswer) {
           setPopupAnimation(congoAnimationData);
@@ -317,62 +318,64 @@ const Smalls = () => {
   return (
     <Layout2>
       <div className="flex h-screen overflow-hidden">
-        <div className="w-1/4 bg-gray-200 p-4 overflow-y-auto">
-          <h2 className="text-lg font-bold mb-4">Small Letters</h2>
-          <div className="flex flex-wrap">
-            {images.map((image) => (
-              <img
-                key={image.id}
-                src={image.src}
-                alt={`Image ${image.id}`}
-                className="w-1/3 cursor-pointer mb-2"
-                onClick={() => handleImageClick(image.src, image.audio)}
-              />
-            ))}
-          </div>
+  <div className="w-1/4 p-4 overflow-y-auto ">
+    <h2 className="text-lg font-bold mb-4">Small Letters</h2>
+    <div className="flex flex-wrap justify-center">
+      {images.map((image) => (
+        <img
+          key={image.id}
+          src={image.src}
+          alt={`Image ${image.id}`}
+          className="w-1/4 cursor-pointer mb-4 mx-2 transform transition duration-300 hover:scale-105"
+          onClick={() => handleImageClick(image.src, image.audio)}
+        />
+      ))}
+    </div>
+  </div>
+  <div className="w-3/4 p-4 flex flex-col items-center justify-center">
+    {selectedImage && (
+      <>
+        <div className="m-4">
+          <img
+            src={selectedImage}
+            alt="Selected Image"
+            className="w-1/5 h-auto object-contain ml-96"
+            style={{ zIndex: 1 }}
+          />
         </div>
-        <div className="w-3/4 bg-gray-300 p-4 flex flex-col items-center justify-center">
-          {selectedImage && (
-            <>
-              <div className="m-4 ml-80">
-                <img
-                  src={selectedImage}
-                  alt="Selected Image"
-                  className=" w-3/4 h-auto object-contain m-2"
-                />
-              </div>
-              <div className="mb-4">
-                <button
-                  onClick={handleButtonClick}
-                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center"
-                  disabled={isLoading}
-                >
-                  {isLoading ? (
-                    "loading"
-                  ) : (
-                    <>
-                      <BsMicFill className="mr-2" /> Record Audio
-                    </>
-                  )}
-                </button>
-              </div>
-            </>
-          )}
-          {renderResult()}
-          {!selectedImage && (
-            <div className="flex items-center justify-center h-full">
-              <p className="text-lg text-gray-600">Select an image</p>
-            </div>
-          )}
+        <div className="mb-4">
+          <button
+            onClick={handleButtonClick}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              "Loading..."
+            ) : (
+              <>
+                <BsMicFill className="mr-2" /> Record Audio
+              </>
+            )}
+          </button>
         </div>
+      </>
+    )}
+    {renderResult()}
+    {!selectedImage && (
+      <div className="flex items-center justify-center h-full">
+        <p className="text-lg text-gray-600">Select an image</p>
       </div>
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg p-8">
-            {showPopup && <Lottie animationData={popupAnimation} />}
-          </div>
-        </div>
-      )}
+    )}
+  </div>
+</div>
+{showPopup && (
+  <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+    <div className="bg-white rounded-lg p-8">
+      {showPopup && <Lottie animationData={popupAnimation} />}
+    </div>
+  </div>
+)}
+
     </Layout2>
   );
 };

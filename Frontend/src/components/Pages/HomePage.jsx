@@ -14,7 +14,7 @@ function HomePage() {
     <Layout2>
       <button
         type="button"
-        className="animate-bounce justify-center inline-flex items-center rounded-md bg-orange-500 px-6 py-3 text-sm font-bold text-black hover:bg-orange-600 focus:outline-none focus:ring focus:border-orange-600"
+        className="animate-bounce justify-center inline-flex items-center rounded-md bg-blue-200 px-6 py-3 text-sm font-bold text-black hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-600"
         onClick={handleButtonClick}
       >
         Let's Get Started

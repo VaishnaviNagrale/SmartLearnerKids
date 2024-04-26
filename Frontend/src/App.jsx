@@ -8,6 +8,7 @@ import CommingSoon from "./components/widgets/CommingSoon"
 import Capitals from "./components/Pages/display/Capitals";
 import Digits from "./components/Pages/display/Digits"
 import Smalls from "./components/Pages/display/Smalls";
+import Quiz from "./components/Pages/Quiz/Quiz";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/learn/capitals" element={<Capitals/>} />
         <Route path="/learn/smalls" element={<Smalls/>} />
         <Route path="/learn/0-9" element={<Digits/>} />
+        <Route path="/quiz" element={<Quiz/>} />
       </Routes>
     </Router>
   );

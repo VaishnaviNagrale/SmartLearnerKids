@@ -130,7 +130,7 @@ const Capitals = () => {
       setShowPopup(true);
       setPopupAnimation(recordingAnimationData);
 
-      await axios.post("http://localhost:8000/api/v1/users/record-audio");
+      await axios.post("/record-audio");
 
       setTimeout(() => {
         setShowPopup(false);
@@ -145,7 +145,7 @@ const Capitals = () => {
       }, 60000);
 
       const response = await axios.post(
-        "http://localhost:8000/api/v1/users/transcribe-audio"
+        "/transcribe-audio"
       );
 
       setTranscribedText(response.data.transcribedText);
@@ -272,7 +272,8 @@ const Capitals = () => {
           const isCorrectAnswer =
           cleanedTranscribedText ===
           cleanedAlphabetCharacter.trim().toUpperCase().replace(/\.$/, "");
-  
+          console.error("cleanedTranscribedText:", cleanedTranscribedText);
+          console.error("cleanedAlphabetCharacter:", cleanedAlphabetCharacter.trim().toUpperCase().replace(/\.$/, ""));
         setShowPopup(true);
         if (isCorrectAnswer) {
           setPopupAnimation(congoAnimationData);
@@ -317,7 +318,7 @@ const Capitals = () => {
   return (
     <Layout2>
       <div className="flex h-screen overflow-hidden">
-        <div className="w-1/4 bg-gray-200 p-4 overflow-y-auto">
+        <div className="w-1/4 p-4 overflow-y-auto">
           <h2 className="text-lg font-bold mb-4">Capital Letters</h2>
           <div className="flex flex-wrap">
             {images.map((image) => (
@@ -325,13 +326,13 @@ const Capitals = () => {
                 key={image.id}
                 src={image.src}
                 alt={`Image ${image.id}`}
-                className="w-1/3 cursor-pointer mb-2"
+              className="w-1/3 cursor-pointer transform transition duration-300 hover:scale-105"
                 onClick={() => handleImageClick(image.src, image.audio)}
               />
             ))}
           </div>
         </div>
-        <div className="w-3/4 bg-gray-300 p-4 flex flex-col items-center justify-center">
+        <div className="w-3/4 p-4 flex flex-col items-center justify-center">
           {selectedImage && (
             <>
               <div className="mb-4 ml-80">
