@@ -16,11 +16,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(json());
 
-app.use(cors(
-  {
-    origin: '*',
-  }
-));
+app.use(cors({
+  origin: '*',
+}));
 
 // Routes
 // User routes
