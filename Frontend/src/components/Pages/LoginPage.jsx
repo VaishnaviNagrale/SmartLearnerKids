@@ -11,8 +11,9 @@ const Login = () => {
   // Form submit handler
   const submitHandler = async (values) => {
     try {
+      console.log(import.meta.env.VITE_APP_API_URL);
       setLoading(true);
-      await axios.post("/login", values);
+      await axios.post(`${import.meta.env.VITE_APP_API_URL}/login`, values);
       message.success("Login Successful");
       setLoading(false);
       navigate("/home")

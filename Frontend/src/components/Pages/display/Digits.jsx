@@ -80,7 +80,7 @@ const Digits = () => {
       setShowPopup(true);
       setPopupAnimation(recordingAnimationData);
 
-      await axios.post("/record-audio");
+      await axios.post(`${import.meta.env.VITE_APP_API_URL}/record-audio`);
 
       // Hide recording popup after 5 seconds
       setTimeout(() => {
@@ -99,7 +99,7 @@ const Digits = () => {
       }, 60000);
 
       const response = await axios.post(
-        "/transcribe-audio"
+        `${import.meta.env.VITE_APP_API_URL}/transcribe-audio`
       );
 
       // Hide recording popup after 5 seconds

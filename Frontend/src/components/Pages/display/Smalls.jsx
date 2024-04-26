@@ -130,7 +130,7 @@ const Smalls = () => {
       setShowPopup(true);
       setPopupAnimation(recordingAnimationData);
 
-      await axios.post("/record-audio");
+      await axios.post(`${import.meta.env.VITE_APP_API_URL}/record-audio`);
 
       setTimeout(() => {
         setShowPopup(false);
@@ -145,7 +145,7 @@ const Smalls = () => {
       }, 60000);
 
       const response = await axios.post(
-        "/transcribe-audio"
+        `${import.meta.env.VITE_APP_API_URL}/transcribe-audio`
       );
 
       setTranscribedText(response.data.transcribedText);

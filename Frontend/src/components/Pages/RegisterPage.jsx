@@ -12,7 +12,7 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/register", values);
+      await axios.post(`${import.meta.env.VITE_APP_API_URL}/register`, values);
       message.success("Registration Successful");
       setLoading(false);
       navigate("/login");
